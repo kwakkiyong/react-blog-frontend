@@ -8,6 +8,11 @@ yarn-error.log*
 # build output
 dist/
 build/
+.vite/
+.cache/
+*.chunk.*
+chunk-*.js
+chunk-*.js.map
 
 # env files
 .env
@@ -15,6 +20,11 @@ build/
 .env.development.local
 .env.test.local
 .env.production.local
+.env*.local
+
+# testing
+coverage/
+.nyc_output/
 
 # editor directories and files
 .idea/
@@ -24,7 +34,16 @@ build/
 *.njsproj
 *.sln
 *.sw?
-.DS_Store
 
 # OS files
 Thumbs.db
+.DS_Store
+*.log
+
+# deployment
+.vercel/
+.netlify/
+
+# misc
+*.pem
+*.local

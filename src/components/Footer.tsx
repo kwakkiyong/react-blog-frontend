@@ -2,7 +2,7 @@ import { SiGithub, SiNotion } from "react-icons/si";
 
 export default function Footer() {
   return (
-    <footer className="flex justify-center items-center gap-10 py-8 bg-gray-200">
+    <footer className="flex justify-center items-center gap-10 py-8 mb-5 bg-gray-200">
       <p className="text-[#605c59]">
         &copy; 2025, Kiyong's Blog made with React
       </p>

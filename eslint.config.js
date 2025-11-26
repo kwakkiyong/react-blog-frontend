@@ -22,7 +22,7 @@ export default defineConfig([
     },
     rules: {
       ...prettierConfig.rules,
-      'prettier/prettier': 'error',
+      'prettier/prettier': 'off',
       'semi': 'off',
       'comma-dangle': 'off',
     },
