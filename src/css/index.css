@@ -58,7 +58,7 @@
 
   body {
     font-family: "Noto Sans KR", sans-serif;
-    background-color: hsl(var(--background));
+    background-color: hsl(var(--secondary));
     color: hsl(var(--foreground));
   }
 
