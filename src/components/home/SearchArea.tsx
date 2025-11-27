@@ -30,17 +30,17 @@ export default function SearchArea() {
     <>
       <section className="mb-5">
         <article className=" text-center">
-          <h2 className="font-serif text-3xl lg:text-[2.25rem] font-bold mb-2">
+          <h2 className="font-serif text-2xl lg:text-[2rem] font-bold mb-2">
             The Kiyong's Blog
           </h2>
-          <p className="font-serif text-lg sm:text-[1.125rem] lg:text-[1.35rem] text-[#605c59] mb-4">
+          <p className="font-serif text-base sm:text-[1rem] lg:text-[1.15rem] text-[#605c59] mb-4">
             This blog can record everything in life.
           </p>
           <form
             className="flex justify-center"
             onSubmit={(e) => e.preventDefault()}
           >
-            <div className="relative w-[40%] sm:w-[35%] md:w-[30%]">
+            <div className="relative w-[45%] sm:w-[40%] md:w-[35%]">
               <input
                 type="text"
                 name="q"

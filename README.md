@@ -1,6 +1,6 @@
 # Kiyong's Blog
 
-React + TypeScript + Vite로 구축된 현대적인 블로그 애플리케이션입니다.
+리액트를 학습하며 제작한 블로그 애플리케이션입니다.
 
 ## 📋 목차
 

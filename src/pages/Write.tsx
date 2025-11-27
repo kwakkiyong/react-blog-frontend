@@ -2,14 +2,17 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import { axiosInstance } from "../api/axiosInstance";
 import axios from "axios";
+import { useAuthStore } from "@/stores/useAuthStore.ts";
+import { toast } from "@/hooks/use-toast.ts";
 
 export default function Write() {
   const navigate = useNavigate();
   const [title, setTitle] = useState<string>("");
   const [category, setCategory] = useState<string>("");
   const [thumbnail, setThumbnail] = useState<string | null>(null);
-  const [username, setUsername] = useState<string>("");
   const [desc, setDesc] = useState<string>("");
+  const username = useAuthStore((state) => state.user?.username);
+
   const encodeFileToBase64 = (image: File) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -25,6 +28,7 @@ export default function Write() {
       reader.onerror = (error) => reject(error);
     });
   };
+
   const handleFileChange = async (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -33,6 +37,7 @@ export default function Write() {
     const convertedFile = await encodeFileToBase64(file);
     setThumbnail(convertedFile as string);
   };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
@@ -48,7 +53,11 @@ export default function Write() {
         username,
       });
       if (status === 201) {
-        alert("글이 등록되었습니다.");
+        toast({
+          title: "게시글 등록 성공",
+          description: "게시글이 등록되었습니다.",
+          variant: "success",
+        });
         navigate("/");
       }
     } catch (error) {
@@ -121,10 +130,10 @@ export default function Write() {
                   type="text"
                   name="writer"
                   id="writer"
-                  className="block px-2.5 py-2.5 rounded-lg border border-[#d1d5db] w-full text-sm leading-5 text-[#111827] bg-[#f9fafb]"
+                  className="block px-2.5 py-2.5 rounded-lg border border-[#d1d5db] w-full text-sm leading-5 text-[#111827] bg-[#f9fafb] disabled:bg-gray-200"
                   placeholder="Type product name"
                   value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  disabled={true}
                   required
                 />
               </div>
