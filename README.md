@@ -228,8 +228,5 @@ npm run ui:add [component-name]
 **Kiyong Kwak**
 
 - GitHub: [@kwakkiyong](https://github.com/kwakkiyong)
-- Notion: [Notion](https://www.notion.so/)
 
 ---
-
-Made with ❤️ using React + TypeScript + Vite
